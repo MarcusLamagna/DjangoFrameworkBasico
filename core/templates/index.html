@@ -10,5 +10,24 @@
     <h2>{{ curso }}</h2>
 
     <p>{{ outro }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in produtos %}
+            <tr>
+                <td><a href="{% url 'produto' product.id %}"> {{ product.nome }}</a></td>
+                <td>{{ product.places }}</td>
+                <td>{{ product.estoque }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
